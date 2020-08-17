@@ -25,16 +25,23 @@ header.masthead {
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
+  
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding-left: 10%;
+  height: 90vh;
+  min-height: 500px;
 }
 
 header.masthead .overlay {
   position: absolute;
-  background-color: #212529;
+  background-color: #FFC846;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 header.masthead h1 {
@@ -43,8 +50,8 @@ header.masthead h1 {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
+    padding-top: 18rem;
+    padding-bottom: 18rem;
   }
   header.masthead h1 {
     font-size: 3rem;
@@ -88,7 +95,6 @@ header.masthead h1 {
 }
 
 .testimonials {
-  padding-top: 7rem;
   padding-bottom: 7rem;
 }
 
@@ -104,7 +110,7 @@ header.masthead h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background: url("../img/bradcam.png") no-repeat top center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -112,7 +118,7 @@ header.masthead h1 {
 
 .call-to-action .overlay {
   position: absolute;
-  background-color: #212529;
+  background-color: #ffffff;
   height: 100%;
   width: 100%;
   top: 0;

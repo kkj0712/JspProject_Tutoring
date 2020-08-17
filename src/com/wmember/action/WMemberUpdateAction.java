@@ -55,14 +55,8 @@ public class WMemberUpdateAction extends HttpServlet {
 		
 		WMemberDAO dao=WMemberDAO.getInstance();
 		int flag=dao.memberUpdate(member);
-		HttpSession session=request.getSession();
 		if(flag==1) {
-			response.setContentType("text/html; charset=utf-8");
-			PrintWriter out = response.getWriter();
-			out.println("<script>");
-			out.println("alert('회원정보가 수정되었습니다');");
-			out.println("history.back(-1);");
-			out.println("</script>");
+			response.sendRedirect("/Tutoring/member/view");
 		}
 
 	}

@@ -92,6 +92,10 @@ a:hover{
     overflow: scroll;
     text-decoration: none;
 }
+.card-columns{
+	overflow: auto;
+	flex-wrap: nowrap;
+}
 </style>
 <body>
 <br/>

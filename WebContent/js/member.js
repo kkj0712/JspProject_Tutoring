@@ -31,6 +31,7 @@ $(document).ready(function(){
 	        alert("비밀번호는 6글자 이상이어야 합니다.");
 	        pw1.value="";
 	        pw1.focus();
+	        return false;
 	    }
 		//이름이 공백일때
 		if($("#name").val()==""){

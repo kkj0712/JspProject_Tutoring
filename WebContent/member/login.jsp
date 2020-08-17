@@ -4,40 +4,36 @@
 <style>
 img{
 	display: inline-block;
-	float: left;
-	margin: 20px;
+	float: right;
 }
 #loginFrm{
-	display: inline-block;
-	float: right;
-	width: 40%;
-	margin: 0 auto;
-	padding-top: 60px;
-}
-.button{
-	text-align: center;
-	margin: 0 auto;
-	padding: 20px;
+	width: 60%;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 35%;
+	transform: translate(-50%, -50%);
 }
 </style>
-<br/>
-<div class="container">
-<img src="/Tutoring/img/login.JPG" alt="">
-
-  <form action="login" method="post" id="loginFrm">
-    <div class="form-group">
-      <label for="userid">아이디</label>
-      <input type="text" class="form-control" id="userid" placeholder="Enter id" name="userid">
-    </div>
-    <div class="form-group">
-      <label for="pwd">패스워드</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <button type="button" id="loginBtn" class="btn btn-primary">로그인</button>
-  </form>
-
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8">
+			<img src="/Tutoring/img/banner.png" alt="loginImage">
+		</div>
+		<div class="col-md-4">
+				<form action="login" method="post" id="loginFrm">
+				  <div class="form-group">
+				    <label for="userid">아이디</label>
+				    <input type="text" class="form-control" id="userid" placeholder="Enter id" name="userid">
+				  </div>
+				  <div class="form-group">
+				    <label for="pwd">패스워드</label>
+				    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+				  </div>
+				  <button type="button" id="loginBtn" class="btn btn-primary" style="width: 100%;">로그인</button>
+				</form>
+		</div>
 </div>
-<br/><br/>
 <script>
 $("#loginBtn").click(function(){
 	if($("#userid").val()==""){

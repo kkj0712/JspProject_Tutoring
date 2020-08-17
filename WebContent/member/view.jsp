@@ -3,30 +3,6 @@
 <%@ include file="../include/header.jsp" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
-.back1{
-	margin-top: 20px;
-	width: auto;
-	height: 150px;
-	background-color: #f8f9fa;
-	border-radius: 20px;
-	column-count: 2;
-	column-gap: 32px;
-	column-rule: 1px dotted #ccc;
-}
-.classday{
-	padding-top: 50px;
-	text-align: center;
-	width: 200px;
-	top: 200px;
-	margin: 0 auto;
-}
-.classname{
-	padding-top: 50px;
-	text-align: center;
-	width: 200px;
-	top: 200px;
-	margin: 0 auto;
-}
 a{
 	text-decoration: none;
 }
@@ -36,7 +12,6 @@ a:hover{
 .back2{
 	margin-top: 20px;
 	background-color: #f8f9fa;
-	border-radius: 20px;
 }
 #frm{
 	margin: 0 auto;
@@ -47,23 +22,26 @@ a:hover{
 	margin: 0 auto;
 	padding: 20px;
 }
+.sidebar{
+	float: left;
+	width: 200px;
+	height:200px;
+	margin-top: 60px;
+	margin-left: 60px;
+}
+.sidebar ul{
+	list-style: none;
+}
+.sidebar ul a{
+	line-height: 2em;
+}
 </style>
-
-<div class="container">
-<br/>
-<h5>수강정보</h5>
-
-<div class="back1">
-	<div class="classday">
-		<h1>0</h1>
-		<p>연속수업 일수</p>
-	</div>
-	<div class="classname">
-		<a href="#"><h1>기초회화</h1></a>
-		<p>과정 명</p>
-	</div>
-</div>
-</div>
+<aside class="sidebar">
+	<ul id="menu">
+        <li><h5><a href="/Tutoring/member/cartList.jsp"> 장바구니</a></h5></li>
+        <li><h5><a href="/Tutoring/member/view"> 계정설정</a></h5></li>
+	</ul>
+</aside>
 <div class="container">
 <br/>
 <h5>계정설정</h5>
@@ -223,6 +201,7 @@ $(document).ready(function(){
 	        alert("비밀번호는 6글자 이상이어야 합니다.");
 	        pw1.value="";
 	        pw1.focus();
+	        return false;
 	    }
 		//이메일이 공백일때
 		if($("#email").val()==""){
@@ -236,6 +215,7 @@ $(document).ready(function(){
 			return false;
 		}
 		$("#frm").submit();
+			alert("회원정보 수정");
 	})//send
 });//document
 </script>

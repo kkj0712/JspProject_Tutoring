@@ -5,14 +5,15 @@
 <style>
 img{
 	display: inline-block;
-	float: left;
-	margin: 20px;
+	float: right;
 }
 #frm{
-	display: inline-block;
-	float: right;
-	width: 40%;
-	margin: 0 auto;
+	width: 60%;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 35%;
+	transform: translate(-50%, -50%);
 }
 .button{
 	text-align: center;
@@ -20,78 +21,81 @@ img{
 	padding: 20px;
 }
 </style>
-<div class="container">
-<br/>
-<img src="/Tutoring/img/testimonials-3.jpg" alt="">
-<form action="insert" method="post" id="frm">
-  <br/><br/>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">아이디</span>
-    </div>
-      <input type="text" class="form-control" id="userid" name="userid" readonly="readonly" size=20>
-    <div class="col align-self-end" >
-          <button  type="button"  id="idcheckBtn"  class="btn btn-primary">중복확인</button>
-   	</div>
-  </div>
-  <br/>
-   
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">이름</span>
-    </div>
-      <input type="text" class="form-control" id="name" name="name">
-  </div>
-  <br/>
-  
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">비밀번호</span>
-    </div>
-    <input type="password" class="form-control" placeholder="6자리 이상" id="pwd" name="pwd">
-    <input type="password" class="form-control" placeholder="비밀번호 확인" id="pwd_check" name="pwd_check">
-  </div>
-  <br/>
-  
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">이메일</span>
-    </div>
-      <input type="text" class="form-control" id="email" name="email" placeholder="email@email.com">
-  </div>
-  <br/>
-    
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">우편번호</span>
-    </div>
-      <input type="text" id="sample6_postcode" name="sample6_postcode" readonly="readonly" class="form-control">
-    <div class="col align-self-end" >
-      <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호" class="btn btn-primary"><br>
-   	</div>
-  </div>
-  <br/>  
-
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">주소</span>
-    </div>
-    <input type="text" id="sample6_address" name="sample6_address" placeholder="주소" class="form-control"><br>
-  </div>
-
-  <div class="input-group mb-3">
-	<input type="text" id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소" class="form-control">
-	<input type="text" id="sample6_extraAddress" name="sample6_extraAddress" placeholder="참고항목" class="form-control">
-  </div>
-    
-  <div class="button">
- 	  <input type="reset" class="btn btn-gray" value="취소">
- 	  <button  id="send"  class="btn btn-primary">회원가입</button>
-  </div>
-  
-</form>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-7">
+			<img src="/Tutoring/img/join.jpg" alt="joinImage">
+		</div>
+		<div class="col-md-5">
+			<form action="insert" method="post" id="frm">
+			  <br/><br/>
+			  <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+			      <span class="input-group-text">아이디</span>
+			    </div>
+			      <input type="text" class="form-control" id="userid" name="userid" readonly="readonly" size=20>
+			    <div class="col align-self-end" >
+			          <button  type="button"  id="idcheckBtn"  class="btn btn-primary">중복확인</button>
+			   	</div>
+			  </div>
+			  <br/>
+			   
+			  <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+			      <span class="input-group-text">이름</span>
+			    </div>
+			      <input type="text" class="form-control" id="name" name="name">
+			  </div>
+			  <br/>
+			  
+			  <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+			      <span class="input-group-text">비밀번호</span>
+			    </div>
+			    <input type="password" class="form-control" placeholder="6자리 이상" id="pwd" name="pwd">
+			    <input type="password" class="form-control" placeholder="비밀번호 확인" id="pwd_check" name="pwd_check">
+			  </div>
+			  <br/>
+			  
+			  <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+			      <span class="input-group-text">이메일</span>
+			    </div>
+			      <input type="text" class="form-control" id="email" name="email" placeholder="email@email.com">
+			  </div>
+			  <br/>
+			    
+			  <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+			      <span class="input-group-text">우편번호</span>
+			    </div>
+			      <input type="text" id="sample6_postcode" name="sample6_postcode" readonly="readonly" class="form-control">
+			    <div class="col align-self-end" >
+			      <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호" class="btn btn-primary"><br>
+			   	</div>
+			  </div>
+			  <br/>  
+			
+			  <div class="input-group mb-3">
+			    <div class="input-group-prepend">
+			      <span class="input-group-text">주소</span>
+			    </div>
+			    <input type="text" id="sample6_address" name="sample6_address" placeholder="주소" class="form-control"><br>
+			  </div>
+			
+			  <div class="input-group mb-3">
+				<input type="text" id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소" class="form-control">
+				<input type="text" id="sample6_extraAddress" name="sample6_extraAddress" placeholder="참고항목" class="form-control">
+			  </div>
+			    
+			  <div class="button">
+			 	  <input type="reset" class="btn btn-gray" value="취소">
+			 	  <button  id="send"  class="btn btn-primary">회원가입</button>
+			  </div>
+	  </div>
+	</form>
+	</div>
 </div>
-<br/><br/>
 <%@ include file="../include/footer.jsp" %>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>

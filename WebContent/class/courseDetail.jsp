@@ -116,13 +116,45 @@ $(document).ready(function(){
 	getData(1, "", "", ${dto.classnum}); //페이지 로드 시 수강후기 리스트 보기
 	
 	//등록하기 클릭
-	$("#subscribe").click(function(){ 
+	$("#subscribe").click(function(){
 		if(${sessionScope.userid==null}){
 			alert("로그인 필요");
 			location.href="/Tutoring/member/login";
 		}else{
-			location.href="/Tutoring/member/view";
-		} 
+			if(confirm("장바구니에 추가하시겠습니까?")){
+				//장바구니에 있는지 확인
+				$.ajax({
+					type : "post",
+					url  : "/Tutoring/class/cartCheck",
+					data : {"classnum":$("#classnum").val(), "userid":$("#userid").val()},
+					success : function(value){
+						if(value.trim()=="1"){
+							alert("이미 장바구니에 있는 강의입니다.");
+						}else{
+							$.ajax({
+								  type:    "post",
+				                  url :    "/Tutoring/class/cartInsert",
+				                  data:    {"classnum":$("#classnum").val(), "userid":$("#userid").val(), "classname":$("#classname").val()},
+				                  success:function(d){
+				                	   if(d.trim()=="1"){
+					                	   alert("장바구니에 강의가 담겼습니다!");
+					                	   if(confirm("장바구니로 이동하시겠습니까?")){
+					                		   location.href="/Tutoring/member/cartList.jsp";
+					                	   }
+				                	   }
+				                  },
+				                  error: function(e){
+				                       alert("error:"+e);
+				                  }
+							})//ajax	
+						}
+					},
+					error: function(e){
+						alert("error:"+e);
+					}
+				})//ajax
+			}//if
+		}//else
 	})//subscribe
 	
 	//검색버튼 클릭
@@ -189,7 +221,11 @@ function showRequest(){
 <!-- 강의 소개 -->
 	<div><a href="/Tutoring/class/courseList"><b>〈</b> 모든 과정</a></div>
 	<div class="card">
-		<form action="subcribe" method="post" id="frm">
+		<form action="/Tutoring/class/cartInsert" method="post" id="frm">
+		 	<!-- 등록하고자 하는 강의 번호 -->
+			    <input type="hidden" id="classnum" name="classnum" value="${dto.classnum}">
+			    <input type="hidden" id="classname" name="classname" value="${dto.classname}">
+			    <input type="hidden" id="userid" name="userid" value="${sessionScope.userid}">
 			<!-- 카드 영역 -->
 			<div class="card-header" style="background-image: url('/Tutoring/upload/${dto.uploadFile}');">
 			</div>
@@ -230,7 +266,8 @@ function showRequest(){
 			<input type="button" value="찾기" id="btnSearch" class="btn btn-outline-secondary btn-sm">
 			<a href="#coll"  id="writeBtn" class="btn btn-outline-dark btn-sm" data-toggle="collapse">글쓰기</a>
 		</form>
-		</div><!-- 검색 끝-->
+		</div>
+		<!-- 검색 끝-->
 		
 		<!-- 수강후기 게시판 -->
 		<div id="result" align="center"></div>

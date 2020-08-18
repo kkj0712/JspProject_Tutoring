@@ -50,7 +50,7 @@ a:hover{
 <br/>
 <h5>계정설정</h5>
 <div class="back2">
-<form action="update" method="post" id="frm">
+<form action="Adminupdate" method="post" id="frm">
   <br/><br/>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
@@ -218,6 +218,7 @@ $(document).ready(function(){
 			return false;
 		}
 		$("#frm").submit();
+			alert("회원정보 수정");
 	})//send
 });//document
 </script>

@@ -103,8 +103,7 @@ function cartdel(cartnum){
 <form action="/Tutoring/member/cartList">
 <input type="hidden" id="userid" name="userid" value="${sessionScope.userid}">
 </form>
-<div class="back2">
-</div>
+<div class="back2"></div>
 <div id="result"></div>
 </div>
 <%@ include file="/include/footer.jsp" %>

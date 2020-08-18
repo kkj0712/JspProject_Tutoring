@@ -40,7 +40,7 @@ a:hover{
 
 <aside class="sidebar">
 	<ul id="menu">
-        <li><h5><a href="/Tutoring/class/ClassInsert.jsp"> 강의입력</a></h5></li>
+        <li><h5><a href="/Tutoring/class/ClassInsert"> 강의입력</a></h5></li>
         <li><h5><a href="/Tutoring/class/ClassList.jsp"> 강의목록</a></h5></li>
         <li><h5><a href="/Tutoring/member/Adminview"> 계정설정</a></h5></li>
 	</ul>

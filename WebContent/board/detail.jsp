@@ -15,7 +15,7 @@ a:hover{
 <script>
 $(document).ready(function(){
 	//문서 열자마자 댓글 리스트를 불러옴
-	$.getJSON("/Tutoring/board/commentList", 
+	$.getJSON("/Tutoring/board/commentList",                                                                                    
 				{num:$("#num").val()}, 
 				function(d){
 					var htmlStr="<table class='table table-striped'>";

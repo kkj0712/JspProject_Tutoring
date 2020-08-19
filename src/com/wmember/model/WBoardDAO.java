@@ -160,6 +160,7 @@ public class WBoardDAO {
 		Statement st=null;
 		ResultSet rs=null;
 		WBoardDTO dto=null;
+		
 		try {
 			con=getConnection();
 			st=con.createStatement();
@@ -221,7 +222,7 @@ public class WBoardDAO {
 		}
 	}
 	
-	//¥Ò±€±€ ªË¡¶
+	//¥Ò±€ ªË¡¶
 	public void commentDel(int cnum) {
 		Connection con=null;
 		Statement st=null;

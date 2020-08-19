@@ -38,20 +38,16 @@ public class CommentInsertAction extends HttpServlet {
 		int bnum=Integer.parseInt(request.getParameter("num"));
 		HttpSession session=request.getSession();
 		String userid=(String)session.getAttribute("userid");
-//		if(userid==null) {//로그인 안됨
-//			response.setContentType("text/html;charset=utf-8");
-//			PrintWriter out=response.getWriter();
-//			out.println("1");
-//		}else {
-			CommentDTO comment=new CommentDTO();
-			comment.setBnum(bnum);
-			comment.setMsg(msg);
-			comment.setUserid(userid);
-			WBoardDAO dao=WBoardDAO.getInstance();
-			dao.commentInsert(comment);
-			//commentList ArrayList에 담아 json으로 리턴
-			response.sendRedirect("commentList?num="+bnum);
-//		}
+
+		CommentDTO comment=new CommentDTO();
+		comment.setBnum(bnum);
+		comment.setMsg(msg);
+		comment.setUserid(userid);
+		WBoardDAO dao=WBoardDAO.getInstance();
+		dao.commentInsert(comment);
+		//commentList ArrayList에 담아 json으로 리턴
+		response.sendRedirect("commentList?num="+bnum);
+
 	}
 
 	/**

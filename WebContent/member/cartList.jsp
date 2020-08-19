@@ -53,7 +53,7 @@ $(document).ready(function(){
 		            	htmlStr+="<tbody>";
 					$.each(d.carr, function(key, val){ 
 		            	htmlStr+="<tr>";
-	            		htmlStr+="<td>"+val.cartnum+"</td>";
+	            		htmlStr+="<td>"+val.classnum+"</td>";
 	            		htmlStr+="<td>"+val.classname+"</td>";
 	            		htmlStr+="<td style='text-align: center;'><a href='javascript:cartdel("+val.cartnum+")'><img src='/Tutoring/img/delete.png' style='height:20px; width:20px;'></a></td>";
 						htmlStr+="</tr>";
@@ -78,7 +78,7 @@ function cartdel(cartnum){
 		            	htmlStr+="<tbody>";
 					$.each(d.carr, function(key, val){ 
 		            	htmlStr+="<tr>";
-	            		htmlStr+="<td>"+val.cartnum+"</td>";
+	            		htmlStr+="<td>"+val.classnum+"</td>";
 	            		htmlStr+="<td>"+val.classname+"</td>";
 	            		htmlStr+="<td style='text-align: center;'><a href='javascript:cartdel("+val.cartnum+")'><img src='/Tutoring/img/delete.png' style='height:20px; width:20px;'></a></td>";
 						htmlStr+="</tr>";

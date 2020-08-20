@@ -18,7 +18,7 @@
 + Editing review and delete comments, review.
 ![Alt text](gifs/5_boardDetail_update,delete,%20CommentList_delete%20jsp.gif)
 ***
-+ After logout, rewrtie delete buttons are dissappeared.
++ After logout, edit and delete buttons are dissappeared.
 ![Alt text](gifs/6_logout.gif)
 ***
 + Admin user and upload course information. Then all website users can see that in course tab. also admin user can edit that course or delete it. 
